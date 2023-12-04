@@ -1,0 +1,96 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Sales_amount"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:layout="sap.ui.layout"
+    height="100%">
+
+    <App id="_IDGenApp1">
+        <Page id="_IDGenPage1" title="Sales Totals by Amounts Chart">
+           
+            <viz:VizFrame
+                id="oVizFrame"
+                busy="false"
+                busyIndicatorDelay="1000"
+                visible="true"
+                uiConfig="{ 'applicationSet': 'fiori' }"
+                vizType="line"
+                legendVisible="true"
+                height="100%"
+                width="100%">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset
+                        id="_IDGenFlattenedDataset1"
+                        data="{/Sales_Totals_by_Amounts}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition1"
+                                name="OrderID"
+                                value="{OrderID}" />
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition2"
+                                name="CompanyName"
+                                value="{CompanyName}" />
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition3"
+                                name="ShippedDate"
+                                value="{ShippedDate}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition
+                                id="_IDGenMeasureDefinition1"
+                                group="1"
+                                name="SaleAmount"
+                                value="{SaleAmount}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem
+                        id="value1"
+                        uid="primaryValues"
+                        type="Measure"
+                        values="SaleAmount" />
+                    <viz.feeds:FeedItem
+                        id="_IDGenFeedItem1"
+                        uid="categoryAxis"
+                        type="Dimension"
+                        values="OrderID,CompanyName,ShippedDate" />
+                </viz:feeds>
+            </viz:VizFrame>
+
+            <!-- Micro Table -->
+            <Table
+                id="microTable"
+                items="{/Sales_Totals_by_Amounts}">
+                <columns>
+                    <Column>
+                        <Text text="Order ID" />
+                    </Column>
+                    <Column>
+                        <Text text="Company Name" />
+                    </Column>
+                    <Column>
+                        <Text text="Shipped Date" />
+                    </Column>
+                    <Column>
+                        <Text text="Sale Amount" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="{OrderID}" />
+                            <Text text="{CompanyName}" />
+                            <Text text="{ShippedDate}" />
+                            <Text text="{SaleAmount}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </Page>
+    </App>
+</mvc:View>

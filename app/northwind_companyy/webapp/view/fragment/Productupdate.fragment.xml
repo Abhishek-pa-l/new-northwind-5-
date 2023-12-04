@@ -1,0 +1,48 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog id="fr2" contentWidth="800px">
+        <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="ProductID" />
+                    <Input id="UpdateProductID" />
+                    <Label text="ProductName" />
+                    <Input id="UpdateProductName" />
+                    <Label text="SupplierID" />
+                    <Input id="UpdateSupplierID" />
+                    <Label text="CategoryID" />
+                    <Input id="UpdateCategoryID" />
+                    <Label text="QuantityPerUnit" />
+                    <Input id="UpdateQuantityPerUnit" />
+                    <Label text="UnitPrice" />
+                    <Input id="UpdateUnitPrice" />
+                    <Label text="UnitsInStock" />
+                    <Input id="UpdateUnitsInStock" />
+                    <Label text="UnitsOnOrder" />
+                    <Input id="UpdateUnitsOnOrder" />
+                    <Label text="ReorderLevel" />
+                    <Input id="UpdateReorderLevel" />
+                    <Label text="Discontinued" />
+                    <Input id="UpdateDiscontinued" />
+                   
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar>
+            <ToolbarSpacer />
+            <Button
+                text="Confirm"
+                type="Accept"
+                press="updateProduct"
+            />
+            <Button
+                text="Cancel"
+                type="Critical"
+                press="onCancelUpdate"
+            />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

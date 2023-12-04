@@ -1,0 +1,64 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog contentWidth="800px">
+        <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="Employee ID"/>
+                    <Input id="UpdateEmployeeID" />
+                    
+                    <Label text="Last Name"/>
+                    <Input id="UpdateLastName"/>
+                    
+                    <Label text="First Name"/>
+                    <Input id="UpdateFirstName" />
+                    
+                    <Label text="Title"/>
+                    <Input id="UpdateTitle" />
+                    
+                    <Label text="Title of Courtesy"/>
+                    <Input id="UpdateTitleOfCourtesy" />
+                    
+                    <Label text="Birth Date"/>
+                    <Input id="UpdateBirthDate" />
+                    
+                    <Label text="Hire Date"/>
+                    <Input id="UpdateHireDate" />
+                    
+                    <Label text="Address"/>
+                    <Input id="UpdateAddress" />
+                    
+                    <Label text="City"/>
+                    <Input id="UpdateCity" />
+                    
+                    <Label text="Region"/>
+                    <Input id="UpdateRegion" />
+                    
+                    <Label text="Postal Code"/>
+                    <Input id="UpdatePostalCode" />
+                    
+                    <Label text="Country"/>
+                    <Input id="UpdateCountry"/>
+                    
+                    <Label text="Home Phone"/>
+                    <Input id="UpdateHomePhone" />
+                    
+                    <Label text="Extension"/>
+                    <Input id="UpdateExtension" />
+                    
+                    <Label text="Notes"/>
+                    <Input id="UpdateNotes" />
+                    
+                    <Label text="Reports To"/>
+                    <Input id="UpdateReportsTo" />
+                    
+                </form:content>
+            </form:SimpleForm>
+
+        </content>
+        <Toolbar>
+            <ToolbarSpacer></ToolbarSpacer>
+            <Button text="Confirm" type="Accept" press="confirmUpdate"/>
+            <Button text="Cancel" type="Reject" press="onCancelUpdate"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

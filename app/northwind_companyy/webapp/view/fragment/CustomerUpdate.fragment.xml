@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog contentWidth="800px">
+          <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="Customer ID"/>
+                <Input id="UpdateCustomerID" />
+                <Label text="Company Name"/>
+                <Input id="UpdateCompanyName"/>
+                <Label text="Contact Name"/>
+                <Input id="UpdateContactName" />
+                <Label text="Contact Title"/>
+                <Input id="UpdateContactTitle"/>
+                <Label text="Address"/>
+                <Input id="UpdateAddress"/>
+                <Label text="City"/>
+                <Input id="UpdateCity" />
+                <Label text="Region"/>
+                <Input id="UpdateRegion" />
+                <Label text="Postal Code"/>
+                <Input id="UpdatePostalCode" />
+                <Label text="Country"/>
+                <Input id="UpdateCountry"/>
+                <Label text="Phone"/>
+                <Input id="UpdatePhone" />
+                <Label text="Fax"/>
+                <Input id="UpdateFax"/>
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar >
+        <ToolbarSpacer ></ToolbarSpacer>
+        <Button text="Confirm" type="Accept" press="confirmUpdate"/>
+        <Button text="Cancel" type="Critical" press="onCancelUpdate"/>
+        </Toolbar>
+      
+    </Dialog>
+</core:FragmentDefinition>
+ 

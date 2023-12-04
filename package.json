@@ -1,0 +1,27 @@
+{
+    "name": "Northwind",
+    "version": "1.0.0",
+    "description": "A simple CAP project.",
+    "repository": "<Add your repository here>",
+    "license": "UNLICENSED",
+    "private": true,
+    "dependencies": {
+        "@cap-js-community/odata-v2-adapter": "^1.11.9",
+        "@sap/cds": "^7",
+        "express": "^4"
+    },
+    "devDependencies": {
+        "@cap-js/sqlite": "^1",
+        "@sap/cds-dk": "^7",
+        "@sap/ux-specification": "^1.120.0",
+        "rimraf": "^3.0.2"
+    },
+    "scripts": {
+        "start": "cds-serve",
+        "watch-northwind_company": "cds watch --open northwind_company/webapp/index.html?sap-ui-xx-viewCache=false",
+        "undeploy": "cf undeploy Northwind --delete-services --delete-service-keys --delete-service-brokers",
+        "build": "rimraf resources mta_archives && mbt build --mtar archive",
+        "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+        "watch-northwind_companyy": "cds watch --open northwind_companyy/webapp/index.html?sap-ui-xx-viewCache=false"
+    }
+}

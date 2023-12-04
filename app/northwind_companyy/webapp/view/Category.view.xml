@@ -1,0 +1,77 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Category"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:viz.data="sap.viz.ui5.data"
+>
+    <App id="_IDGenApp1">
+        <Page
+            id="_IDGenPage1"
+            title="Sales by Categories Chart"
+        >
+            <content>
+                <viz:VizFrame
+                    id="oVizFrame"
+                    busy="false"
+                    busyIndicatorDelay="1000"
+                    visible="true"
+                    uiConfig="{ 'applicationSet': 'fiori' }"
+                    vizType="donut"
+                    legendVisible="true"
+                    width="100%"
+                    height="100%"
+                >
+                    <viz:dataset>
+                        <viz.data:FlattenedDataset
+                            id="_IDGenFlattenedDataset1"
+                            data="{/Sales_by_Categories}"
+                        >
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition1"
+                                    name="CategoryName"
+                                    value="{CategoryName}"
+                                />
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition2"
+                                    name="ProductName"
+                                    value="{ProductName}"
+                                />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition
+                                    id="_IDGenMeasureDefinition1"
+                                    group="1"
+                                    name="ProductSales"
+                                    value="{ProductSales}"
+                                />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+                    <viz:feeds>
+                        <viz.feeds:FeedItem
+                            id="size"
+                            uid="size"
+                            type="Measure"
+                            values="ProductSales"
+                        />
+                        <viz.feeds:FeedItem
+                            id="_IDGenFeedItem1"
+                            uid="color"
+                            type="Dimension"
+                            values="CategoryName,ProductName"
+                        />
+                        <viz.feeds:FeedItem
+                            id="innerRadius"
+                            uid="innerRadius"
+                            type="Measure"
+                            values="ProductSales"
+                        />
+                    </viz:feeds>
+                </viz:VizFrame>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

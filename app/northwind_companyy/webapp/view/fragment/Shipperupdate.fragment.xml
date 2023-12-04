@@ -1,0 +1,26 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog id="SU1">
+        <content>
+            <form:SimpleForm id="SU2">
+                <form:content>
+                    <Label id="SU3" text="Shipper ID" />
+                    <Input id="Shi1"/>
+                    <Label id="SU4" text="Company Name" />
+                    <Input id="Com1" />
+                    <Label id="SU5" text="Phone" />
+                    <Input id="Ph1" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar id="SU6" >
+        <ToolbarSpacer id="SU7" ></ToolbarSpacer>
+        <Button id="SU8" text="Confirm" type="Accept" press="onConfirmButton"/>
+        <Button id="SU9" text="Cancel" type="Critical" press="onCancelUpdate"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>
+ 

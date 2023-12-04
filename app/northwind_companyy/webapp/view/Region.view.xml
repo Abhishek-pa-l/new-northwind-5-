@@ -1,0 +1,44 @@
+<mvc:View controllerName="com.sap.northwindcompanyy.controller.Region"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    displayBlock="true"
+    xmlns="sap.m">
+ 
+    <Page id="page" title="Regions">
+        <content>
+            
+            <VBox id="id1">
+                <HBox id="id2">
+                    <Button id="id4" text="Add" press="onAddPress" />
+                    <Button id="id3" text="Delete" press="onDeletePress" />
+                    <Button id="id5" text="Update" press="onUpdatePress" />
+                    <Button id="id11" icon="sap-icon://excel-attachment" press="onExport"/>
+                    <SearchField id="id8" width="auto" liveChange="onFilter" />
+                    <u:FileUploader id="fileUploader"  uploadUrl="upload/" change="onFileUploadChange" placeholder="Choose a CSV file"/>        
+                    <Button id="_IDGenButton1" press="convertCsvToJson"/>
+                </HBox>
+ 
+                <Table id="t1" items="{/Regions}" class="" mode="MultiSelect">
+                    <columns>
+                        <Column id="c1">
+                            <Text id="Rt1" text="Region ID" />
+                        </Column>
+                        <Column id="c2">
+                            <Text id="Rd1" text="Region Description" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="c3" vAlign="Middle">
+                            <cells>
+                                <Text id="regionid" text="{RegionID}" />
+                                <Text id="regiondesc" text="{RegionDescription}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
+ 

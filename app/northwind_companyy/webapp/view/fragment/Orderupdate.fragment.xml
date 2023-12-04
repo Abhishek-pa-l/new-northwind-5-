@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog id="fr1" contentWidth="800px">
+        <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="OrderID" />
+                    <Input id="UpdateOrderID" />
+                    <Label text="CustomerID" />
+                    <Input id="UpdateCustomerID" />
+                    <Label text="EmployeeID" />
+                    <Input id="UpdateEmployeeID" />
+                    <Label text="OrderDate" />
+                    <Input id="UpdateOrderDate" />
+                    <Label text="RequiredDate" />
+                    <Input id="UpdateRequiredDate" />
+                    <Label text="ShippedDate" />
+                    <Input id="UpdateShippedDate" />
+                    <Label text="ShipVia" />
+                    <Input id="UpdateShipVia" />
+                    <Label text="Freight" />
+                    <Input id="UpdateFreight" />
+                    <Label text="ShipName" />
+                    <Input id="UpdateShipName" />
+                    <Label text="ShipAddress" />
+                    <Input id="UpdateShipAddress" />
+                    <Label text="ShipCity" />
+                    <Input id="UpdateShipCity" />
+                    <Label text="ShipRegion" />
+                    <Input id="UpdateShipRegion" />
+                    <Label text="ShipPostalCode" />
+                    <Input id="UpdateShipPostalCode" />
+                    <Label text="ShipCountry" />
+                    <Input id="UpdateShipCountry" />
+                   
+                   
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar>
+            <ToolbarSpacer />
+            <Button
+                text="Confirm"
+                type="Accept"
+                press="updateOrder"
+            />
+            <Button
+                text="Cancel"
+                type="Critical"
+                press="onCancelUpdate"
+            />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

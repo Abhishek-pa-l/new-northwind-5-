@@ -1,0 +1,344 @@
+{
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "com.sap.northwindcompanyy",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.11.5",
+            "toolsId": "34574765-0aa3-45ba-8eaf-bbfe5a9a54da"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/odata/v2/catalog/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.120.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "com.sap.northwindcompanyy.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "synchronizationMode": "None",
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "com.sap.northwindcompanyy.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteNorthwind",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetNorthwind"
+                    ]
+                },
+                {
+                    "name": "Customer",
+                    "pattern": "page2",
+                    "target": [
+                        "TargetCustomer"
+                    ]
+                },
+                {
+                    "name": "Employee",
+                    "pattern": "page3",
+                    "target": [
+                        "TargetEmployee"
+                    ]
+                },
+                {
+                    "name": "Shipper",
+                    "pattern": "page4",
+                    "target": [
+                        "TargetShipper"
+                    ]
+                },
+                {
+                    "name": "Region",
+                    "pattern": "page5",
+                    "target": [
+                        "TargetRegion"
+                    ]
+                },
+                {
+                    "name": "Order",
+                    "pattern": "page6",
+                    "target": [
+                        "TargetOrder"
+                    ]
+                },
+                {
+                    "name": "Product",
+                    "pattern": "page7",
+                    "target": [
+                        "TargetProduct"
+                    ]
+                },
+                {
+                    "name": "Order_Detail",
+                    "pattern": "page8",
+                    "target": [
+                        "TargetOrder_Detail"
+                    ]
+                },
+                {
+                    "name": "Files",
+                    "pattern": "page9",
+                    "target": [
+                        "TargetFiles"
+                    ]
+                },
+                {
+                    "name": "Sales_amount",
+                    "pattern": "page10",
+                    "target": [
+                        "TargetSales_amount"
+                    ]
+                },
+                {
+                    "name": "Product_sale",
+                    "pattern": "page11",
+                    "target": [
+                        "TargetProduct_sale"
+                    ]
+                },
+                {
+                    "name": "Territorie",
+                    "pattern": "page12",
+                    "target": [
+                        "TargetTerritorie"
+                    ]
+                },
+                {
+                    "name": "Category",
+                    "pattern": "page13",
+                    "target": [
+                        "TargetCategory"
+                    ]
+                },
+                {
+                    "name": "Home",
+                    "pattern": "page14",
+                    "target": [
+                        "TargetHome"
+                    ]
+                },
+                {
+                    "name": "Suplier",
+                    "pattern": "page15",
+                    "target": [
+                        "TargetSuplier"
+                    ]
+                },{
+                    "name": "Invoice",
+                    "pattern": "page16",
+                    "target": [
+                        "TargetInvoice"
+                    ]
+                }
+
+
+
+
+            ],
+            "targets": {
+                "TargetNorthwind": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Northwind",
+                    "viewName": "Northwind"
+                },
+                "TargetCustomer": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Customer",
+                    "viewName": "Customer"
+                },
+                "TargetEmployee": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Employee",
+                    "viewName": "Employee"
+                },
+                "TargetShipper": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Shipper",
+                    "viewName": "Shipper"
+                },
+                "TargetRegion": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Region",
+                    "viewName": "Region"
+                },
+                "TargetOrder": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Order",
+                    "viewName": "Order"
+                },
+                "TargetProduct": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Product",
+                    "viewName": "Product"
+                },
+                "TargetOrder_Detail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Order_Detail",
+                    "viewName": "Order_Detail"
+                },
+                "TargetFiles": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Files",
+                    "viewName": "Files"
+                },
+                "TargetSales_amount": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Sales_amount",
+                    "viewName": "Sales_amount"
+                },
+                "TargetProduct_sale": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Product_sale",
+                    "viewName": "Product_sale"
+                },
+                "TargetTerritorie": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Territorie",
+                    "viewName": "Territorie"
+                },
+                "TargetCategory": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Category",
+                    "viewName":"Category"
+                },
+                "TargetHome": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Home",
+                    "viewName":"Home"
+                },
+                "TargetSuplier": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Suplier",
+                    "viewName":"Suplier"
+                },
+                "TargetInvoice": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Invoice",
+                    "viewName":"Invoice"
+                }
+            }
+        },
+            
+        "rootView": {
+            "viewName": "com.sap.northwindcompanyy.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "Northwind"
+    }
+}

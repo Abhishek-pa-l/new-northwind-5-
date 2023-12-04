@@ -1,0 +1,315 @@
+<mvc:View
+    xmlns:microchart="sap.suite.ui.microchart"
+    controllerName="com.sap.northwindcompanyy.controller.Home"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns="sap.m"
+>
+    <App id="_IDGenApp1">
+        <Page
+            id="_IDGenPage1"
+            title="Micro Tiles"
+        >
+          <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onIconTabBarSelect">
+                <items>
+                    <IconTabFilter id="homeTab" text="Home" key="homes"/>
+                    <IconTabFilter id="customersTab" text="Customers" key="Customers"/>
+                    <IconTabFilter id="employeesTab" text="Employees" key="Employees"/>
+                    <IconTabFilter id="orderTab" text="Orders" key="Orders"/>
+                     <IconTabFilter id="producttsb" text="Products" key="Products"/>
+                    <IconTabFilter id="shipperTab" text="Shippers" key="Shippers"/>
+                     <IconTabFilter id="regionTab" text="Regions" key="Regions"/>
+                     <IconTabFilter id="suplierTab" text="Supplier " key="suplier"/>
+                     <IconTabFilter id="invoice" text="Invoice " key="Invoice"/>
+                     <IconTabFilter id="order_detailTab" text="Order_Details" key="Order_Details"/>
+                     <IconTabFilter id="FilesTab" text="Attachments" key="Files"/>
+                    <IconTabFilter id="ProductsalesTab" text="Product sales Report" key="Product_sales"/>
+                    <IconTabFilter id="salesamountTab" text="Sales_Totals_by_Amounts" key="Sales_Totals"/>
+                    <IconTabFilter id="territoriesTab" text="Territories Report " key="territories"/>
+                    <IconTabFilter id="category_salestTab" text="Sales By Categories " key="category"/>
+                    
+                </items>
+            </IconTabBar>   
+            <HBox
+                id="_IDGenVBox1"
+                wrap="Wrap"
+            >
+              
+                <GenericTile
+                    id="_IDGenGenericTile1"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="Territories"
+                    frameType="TwoByOne"
+                    subheader="RegionID"
+                    press="onTerritoriesTilePress"
+                >
+                    <TileContent
+                        id="_IDGenTileContent1"
+                     
+                        footer="TerritoryID"
+                    >
+                        <viz:VizFrame
+                    id="oVizFrame"
+                    busy="false"
+                    busyIndicatorDelay="1000"
+                    visible="true"
+                    uiConfig="{ 'applicationSet': 'fiori' }"
+                    vizType="column"
+                    legendVisible="true"
+                    width="100%"
+                    height="85%"
+                >
+                    <viz:dataset>
+                        <viz.data:FlattenedDataset
+                            id="_IDGenFlattenedDataset1"
+                            data="{/Territories}"
+                        >
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition1"
+                                    name="TerritoryID"
+                                    value="{TerritoryID}"
+                                />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition
+                                    id="_IDGenMeasureDefinition1"
+                                    group="1"
+                                    name="RegionID"
+                                    value="{RegionID}"
+                                />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+                    <viz:feeds>
+                        <viz.feeds:FeedItem
+                            id="valueAxis"
+                            uid="valueAxis"
+                            type="Measure"
+                            values="RegionID"
+                        />
+                        <viz.feeds:FeedItem
+                            id="categoryAxis"
+                            uid="categoryAxis"
+                            type="Dimension"
+                            values="TerritoryID"
+                        />
+                    </viz:feeds>
+                </viz:VizFrame>
+                    </TileContent>
+                </GenericTile>
+                <GenericTile
+                    id="_IDGenGenericTile3"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="Sales Totals by Amounts Chart"
+                    frameType="TwoByOne"
+                    subheader="Sale Amount"
+                    press="onsales_amountPress"
+                >
+                    <TileContent
+                        id="_IDGenTileContent4"
+                      
+                        footer="OrderID/CompanyName/ShippedDate"
+                    >
+                        <viz:VizFrame
+                id="oVizFrame1"
+                busy="false"
+                busyIndicatorDelay="1000"
+                visible="true"
+                uiConfig="{ 'applicationSet': 'fiori' }"
+                vizType="line"
+                legendVisible="true"
+                height="70%"
+                width="70%">
+                <viz:dataset>
+                    <viz.data:FlattenedDataset
+                        id="_IDGenFlattenedDataset99"
+                        data="{/Sales_Totals_by_Amounts}">
+                        <viz.data:dimensions>
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition0"
+                                name="OrderID"
+                                value="{OrderID}" />
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition2"
+                                name="CompanyName"
+                                value="{CompanyName}" />
+                            <viz.data:DimensionDefinition
+                                id="_IDGenDimensionDefinition3"
+                                name="ShippedDate"
+                                value="{ShippedDate}" />
+                        </viz.data:dimensions>
+                        <viz.data:measures>
+                            <viz.data:MeasureDefinition
+                                id="_IDGenMeasureDefinition10"
+                                group="1"
+                                name="SaleAmount"
+                                value="{SaleAmount}" />
+                        </viz.data:measures>
+                    </viz.data:FlattenedDataset>
+                </viz:dataset>
+                <viz:feeds>
+                    <viz.feeds:FeedItem
+                        id="value1"
+                        uid="primaryValues"
+                        type="Measure"
+                        values="SaleAmount" />
+                    <viz.feeds:FeedItem
+                        id="_IDGenFeedItem1"
+                        uid="categoryAxis"
+                        type="Dimension"
+                        values="OrderID,CompanyName,ShippedDate" />
+                </viz:feeds>
+            </viz:VizFrame>
+
+                    </TileContent>
+                </GenericTile>
+                <GenericTile
+                    id="_IDGenGenericTile5"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="Product Sale By 1947"
+                    frameType="TwoByOne"
+                    subheader="CategoryName/ProductName"
+                    press="onproduct_salesPress"
+                >
+                    <TileContent
+                        id="_IDGenTileContent5"
+                     
+                        footer="ProductSale"
+                    >
+                       <viz:VizFrame
+                    id="oVizFrame10"
+                    busy="false"
+                    busyIndicatorDelay="1000"
+                    visible="true"
+                    uiConfig="{ 'applicationSet': 'fiori' }"
+                    vizType="bar"
+                    legendVisible="true"
+                    width="85%"
+                    height="85%"
+                >
+                    <viz:dataset>
+                        <viz.data:FlattenedDataset
+                            id="_IDGenFlattenedDataset100"
+                            data="{/Product_Sales_for_1997}"
+                        >
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition10"
+                                    name="CategoryName"
+                                    value="{CategoryName}"
+                                />
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition20"
+                                    name="ProductName"
+                                    value="{ProductName}"
+                                />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition
+                                    id="_IDGenMeasureDefinition12"
+                                    group="1"
+                                    name="ProductSales"
+                                    value="{ProductSales}"
+                                />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+                    <viz:feeds>
+                        <viz.feeds:FeedItem
+                            id="value111"
+                            uid="primaryValues"
+                            type="Measure"
+                            values="ProductSales"
+                        />
+                        <viz.feeds:FeedItem
+                            id="_IDGenFeedItem111"
+                            uid="categoryAxis"
+                            type="Dimension"
+                            values="CategoryName,ProductName"
+                        />
+                    </viz:feeds>
+                </viz:VizFrame>
+                    </TileContent>
+                </GenericTile>
+            
+                 <GenericTile
+                    id="_IDGenGenericTile10"
+                    class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                    header="Sales By Category"
+                    frameType="TwoByOne"
+                    subheader=""
+                    press="onSalesByCategoriesTilePress"
+                >
+                    <TileContent
+                        id="_IDGenTileContent10"
+                        unit="Units"
+                        footer=""
+                    > 
+                     <viz:VizFrame
+                    id="oVizFrame2"
+                    busy="false"
+                    busyIndicatorDelay="1000"
+                    visible="true"
+                    uiConfig="{ 'applicationSet': 'fiori' }"
+                    vizType="donut"
+                    legendVisible="true"
+                    width="97%"
+                    height="97%"
+                >
+                    <viz:dataset>
+                        <viz.data:FlattenedDataset
+                            id="_IDGenFlattenedDataset11"
+                            data="{/Sales_by_Categories}"
+                        >
+                            <viz.data:dimensions>
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition11"
+                                    name="CategoryName"
+                                    value="{CategoryName}"
+                                />
+                                <viz.data:DimensionDefinition
+                                    id="_IDGenDimensionDefinition21"
+                                    name="ProductName"
+                                    value="{ProductName}"
+                                />
+                            </viz.data:dimensions>
+                            <viz.data:measures>
+                                <viz.data:MeasureDefinition
+                                    id="_IDGenMeasureDefinition11"
+                                    group="1"
+                                    name="ProductSales"
+                                    value="{ProductSales}"
+                                />
+                            </viz.data:measures>
+                        </viz.data:FlattenedDataset>
+                    </viz:dataset>
+                    <viz:feeds>
+                        <viz.feeds:FeedItem
+                            id="size"
+                            uid="size"
+                            type="Measure"
+                            values="ProductSales"
+                        />
+                        <viz.feeds:FeedItem
+                            id="_IDGenFeedItem11"
+                            uid="color"
+                            type="Dimension"
+                            values="CategoryName,ProductName"
+                        />
+                        <viz.feeds:FeedItem
+                            id="innerRadius"
+                            uid="innerRadius"
+                            type="Measure"
+                            values="ProductSales"
+                        />
+                    </viz:feeds>
+                </viz:VizFrame> 
+                    </TileContent>
+                </GenericTile>
+            </HBox>
+        </Page>
+    </App>
+</mvc:View>

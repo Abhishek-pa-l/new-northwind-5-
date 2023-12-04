@@ -1,0 +1,64 @@
+<mvc:View
+   controllerName="com.sap.northwindcompanyy.controller.Customer"
+   xmlns:mvc="sap.ui.core.mvc"
+   xmlns="sap.m"
+   xmlns:u="sap.ui.unified"
+   xmlns:form="sap.ui.layout.form">
+
+   <Page id="page" title="Customer">
+     <content>
+         
+        <Table id="idProductsTable" items="{/Customers}" mode="MultiSelect">
+            <headerToolbar>
+                <OverflowToolbar id="otbSubheader">
+                    <ToolbarSpacer/>
+                    <SearchField ariaLabelledBy="text1" id="maxPrice" liveChange="onFilter">
+                        <layoutData><OverflowToolbarLayoutData maxWidth="300px" shrinkable="true" priority="NeverOverflow"/></layoutData>
+                    </SearchField>
+                    <Button text="Delete" type="Transparent" press="onDelete"/>
+                    <Button text="Add" type="Transparent" press="onAdd"/>
+                    <Button text="Update" type="Transparent" press="onUpdate"/>
+                    <Button icon="sap-icon://excel-attachment" press="onExport"/>
+			<u:FileUploader
+                            id="fileUploader"
+                            uploadUrl="upload/"
+                            change="onFileUploadChange"
+                            placeholder="Choose a CSV file"
+                        />
+                </OverflowToolbar>
+            </headerToolbar>
+           <columns>
+    <Column width="12em"><Text id="customerID" text="CustomerID" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true"><Text id="companyName" text="CompanyName" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true" ><Text id="contactName" text="ContactName" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true"><Text id="contactTitle" text="ContactTitle" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true" ><Text id="address" text="Address" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true" ><Text id="city" text="City" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true" ><Text id="region" text="Region" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true"><Text id="postalCode" text="PostalCode" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true" ><Text id="country" text="Country" /></Column>
+    <Column minScreenWidth="Tablet" demandPopin="true"><Text id="phone" text="Phone" /></Column>
+    <Column hAlign="End"><Text id="fax" text="Fax" /></Column>
+</columns>
+
+            <items>
+                <ColumnListItem>
+                    <cells>
+                        <ObjectIdentifier title="{Name}" text="{CustomerID}" />
+                        <Text text="{CompanyName}" />
+                        <Text text="{ContactName}" />
+                        <Text text="{ContactTitle}" />
+                        <Text text="{Address}" />
+                        <Text text="{City}" />
+                        <Text text="{Region}" />
+                        <Text text="{PostalCode}" />
+                        <Text text="{Country}" />
+                        <Text text="{Phone}" />
+                        <Text text="{Fax}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+     </content>
+   </Page>
+</mvc:View>

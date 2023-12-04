@@ -1,0 +1,113 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Suplier"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+   
+>
+    <Page
+        id="page"
+        title="Supplier"
+    >
+        <content>
+            <VBox id="_IDGenVBox1">
+               <Toolbar >
+                    <Button
+                        id="_IDGenButton1"
+                        text="Add"
+                        press="onAddPress"
+                    />
+                    <Button
+                        id="_IDGenButton2"
+                        text="Delete"
+                        press="onDeletePress"
+                    />
+                    <Button
+                        id="_IDGenButton3"
+                        text="Update"
+                        press="onUpdatePress"
+                    />
+                    <Button
+                        id="_IDGenButton4"
+                        icon="sap-icon://upload"
+                        press="onExport"
+                    />
+                    <u:FileUploader
+                                id="fileUploader"
+                                uploadUrl="upload/"
+                                change="onFileUploadChange"
+                                placeholder="Choose a CSV file"
+                            />
+                   
+                   
+                    <ToolbarSpacer ></ToolbarSpacer>
+                    <SearchField width="200px" search="onSearch"></SearchField>
+                </Toolbar>
+ 
+                <Table
+                    id="supplierTable"
+                    items="{/Suppliers}"
+                    mode="MultiSelect"
+                >
+                    <columns>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="SupplierID" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="CompanyName" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="ContactName" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="ContactTitle" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="Address" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="City" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="Region" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="PostalCode" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="Country" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="Phone" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="Fax" />
+                        </Column>
+                        <Column minScreenWidth="Tablet">
+                            <Text text="HomePage" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{SupplierID}" />
+                                <Text text="{CompanyName}" />
+                                <Text text="{ContactName}" />
+                                <Text text="{ContactTitle}" />
+                                <Text text="{Address}" />
+                                <Text text="{City}" />
+                                <Text text="{Region}" />
+                                <Text text="{PostalCode}" />
+                                <Text text="{Country}" />
+                                <Text text="{Phone}" />
+                                <Text text="{Fax}" />
+                                <Text text="{HomePage}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

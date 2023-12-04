@@ -1,0 +1,2 @@
+ShipName;ShipAddress;ShipCity;ShipRegion;ShipPostalCode;ShipCountry;CustomerID;CustomerName;Address;City;Region;PostalCode;Country;Salesperson;OrderID;OrderDate;RequiredDate;ShippedDate;ShipperName;ProductID;ProductName;UnitPrice;Quantity;Discount;ExtendedPrice;Freight
+Alfred's Futterkiste;Obere Str. 57;Berlin;null;12209;Germany;ALFKI;Alfreds Futterkiste;Obere Str. 57;Berlin;null;12209;Germany;Margaret Peacock;22-4-2011;21-3-2021;28-11-2023;United Package;63Vegie-spread;43.9000;20;0;878.0000;61.0200

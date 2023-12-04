@@ -1,0 +1,169 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Invoice"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+>
+    <Page
+        id="page"
+        title="Invoice"
+    >
+        <content>
+            <VBox id="_IDGenVBox1">
+                <HBox id="_IDGenHBox1">
+                    <Button
+                        id="_IDGenButton1"
+                        text="Add"
+                        press="onAddPress"
+                    />
+                    <Button
+                        id="_IDGenButton2"
+                        text="Delete"
+                        press="onDeletePress"
+                    />
+                    <Button
+                        id="_IDGenButton3"
+                        text="Update"
+                        press="onUpdatePress"
+                    />
+                    <Button
+                        id="_IDGenButton4"
+                        icon="sap-icon://upload"
+                        press="onImportPress"
+                    />
+                    <Button
+                        id="_IDGenButton5"
+                        icon="sap-icon://search"
+                        press="onSearchPress"
+                    />
+                    <Button
+                        id="_IDGenButton6"
+                        icon="sap-icon://export"
+                        type="Emphasized"
+                        press="onExportPress"
+                    />
+                </HBox>
+ 
+                <Table
+                    id="invoiceTable"
+                    items="{/Invoices}"
+                    mode="MultiSelect"
+                >
+                    <columns>
+                        <Column>
+                            <Text text="ShipName" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipAddress" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipCity" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipRegion" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipPostalCode" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipCountry" />
+                        </Column>
+                        <Column>
+                            <Text text="CustomerID" />
+                        </Column>
+                        <Column>
+                            <Text text="CustomerName" />
+                        </Column>
+                        <Column>
+                            <Text text="Address" />
+                        </Column>
+                        <Column>
+                            <Text text="City" />
+                        </Column>
+                        <Column>
+                            <Text text="Region" />
+                        </Column>
+                        <Column>
+                            <Text text="PostalCode" />
+                        </Column>
+                        <Column>
+                            <Text text="Country" />
+                        </Column>
+                        <Column>
+                            <Text text="Salesperson" />
+                        </Column>
+                        <Column>
+                            <Text text="OrderID" />
+                        </Column>
+                        <Column>
+                            <Text text="OrderDate" />
+                        </Column>
+                        <Column>
+                            <Text text="RequiredDate" />
+                        </Column>
+                        <Column>
+                            <Text text="ShippedDate" />
+                        </Column>
+                        <Column>
+                            <Text text="ShipperName" />
+                        </Column>
+                        <Column>
+                            <Text text="ProductID" />
+                        </Column>
+                        <Column>
+                            <Text text="ProductName" />
+                        </Column>
+                        <Column>
+                            <Text text="UnitPrice" />
+                        </Column>
+                        <Column>
+                            <Text text="Quantity" />
+                        </Column>
+                        <Column>
+                            <Text text="Discount" />
+                        </Column>
+                        <Column>
+                            <Text text="ExtendedPrice" />
+                        </Column>
+                        <Column>
+                            <Text text="Freight" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{ShipName}" />
+                                <Text text="{ShipAddress}" />
+                                <Text text="{ShipCity}" />
+                                <Text text="{ShipRegion}" />
+                                <Text text="{ShipPostalCode}" />
+                                <Text text="{ShipCountry}" />
+                                <Text text="{CustomerID}" />
+                                <Text text="{CustomerName}" />
+                                <Text text="{Address}" />
+                                <Text text="{City}" />
+                                <Text text="{Region}" />
+                                <Text text="{PostalCode}" />
+                                <Text text="{Country}" />
+                                <Text text="{Salesperson}" />
+                                <Text text="{OrderID}" />
+                                <Text text="{OrderDate}" />
+                                <Text text="{RequiredDate}" />
+                                <Text text="{ShippedDate}" />
+                                <Text text="{ShipperName}" />
+                                <Text text="{ProductID}" />
+                                <Text text="{ProductName}" />
+                                <Text text="{UnitPrice}" />
+                                <Text text="{Quantity}" />
+                                <Text text="{Discount}" />
+                                <Text text="{ExtendedPrice}" />
+                                <Text text="{Freight}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

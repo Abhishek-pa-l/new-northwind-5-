@@ -1,0 +1,184 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Employee"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        id="page"
+        title="Employee"
+    >
+        <content>
+            
+            <Table
+                id="idProductsTable"
+                items="{/Employees}"
+                mode="MultiSelect"
+            >
+                <headerToolbar>
+                    <OverflowToolbar id="otbSubheader">
+                        <ToolbarSpacer />
+
+                        <SearchField
+                            ariaLabelledBy="text1"
+                            id="maxPrice"
+                            liveChange="onFilter"
+                        >
+                            <layoutData>
+                                <OverflowToolbarLayoutData
+                                    maxWidth="300px"
+                                    shrinkable="true"
+                                    priority="NeverOverflow"
+                                />
+                            </layoutData>
+                        </SearchField>
+                        <Button
+                            icon="sap-icon://delete"
+                            type="Transparent"
+                            press="onDelete"
+                        />
+                        <Button
+                            type="Transparent"
+                            icon="sap-icon://add"
+                            press="onAdd"
+                        />
+                        <Button
+                            type="Transparent"
+                            icon="sap-icon://edit"
+                            press="onUpdate"
+                        />
+                        <Button
+                            icon="sap-icon://excel-attachment"
+                            press="onExport"
+                        />
+                        <u:FileUploader
+                            id="fileUploader"
+                            uploadUrl="upload/"
+                            change="onFileUploadChange"
+                            placeholder="Choose a CSV file"
+                        />
+                    
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column width="10em">
+                        <Text text="EmployeeID" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="LastName" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="FirstName" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Title" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="TitleOfCourtesy" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="BirthDate " />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="HireDate" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Address " />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="City" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Region" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="PostalCode" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Country " />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="HomePhone " />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Extension" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Notes" />
+                    </Column>
+                    <Column hAlign="End">
+                        <Text text="ReportsTo" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier
+                                title="{Name}"
+                                text="{EmployeeID}"
+                            />
+                            <Text text="{LastName}" />
+                            <Text text="{FirstName}" />
+                            <Text text="{Title}" />
+                            <Text text="{TitleOfCourtesy}" />
+                            <Text text="{BirthDate}" />
+                            <Text text="{HireDate}" />
+                            <Text text="{Address}" />
+                            <Text text="{City}" />
+                            <Text text="{Region}" />
+                            <Text text="{PostalCode}" />
+                            <Text text="{Country}" />
+                            <Text text="{HomePhone}" />
+                            <Text text="{Extension}" />
+                            <Text text="{Notes}" />
+                            <Text text="{ReportsTo}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

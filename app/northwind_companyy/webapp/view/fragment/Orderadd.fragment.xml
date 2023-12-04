@@ -1,0 +1,57 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog contentWidth="800px">
+        <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="OrderID" />
+                    <Input id="OrderID" />
+                    <Label text="CustomerID" />
+                    <Input id="CustomerID" />
+                    <Label text="EmployeeID" />
+                    <Input id="EmployeeID" />
+                    <Label text="OrderDate" />
+                    <Input id="OrderDate" />
+                    <Label text="RequiredDate" />
+                    <Input id="RequiredDate" />
+                    <Label text="ShippedDate" />
+                    <Input id="ShippedDate" />
+                    <Label text="ShipVia" />
+                    <Input id="ShipVia" />
+                    <Label text="Freight" />
+                    <Input id="Freight" />
+                    <Label text="ShipName" />
+                    <Input id="ShipName" />
+                    <Label text="ShipAddress" />
+                    <Input id="ShipAddress" />
+                    <Label text="ShipCity" />
+                    <Input id="ShipCity" />
+                    <Label text="ShipRegion" />
+                    <Input id="ShipRegion" />
+                    <Label text="ShipPostalCode" />
+                    <Input id="ShipPostalCode" />
+                    <Label text="ShipCountry" />
+                    <Input id="ShipCountry" />
+                   
+                   
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar>
+            <ToolbarSpacer />
+            <Button
+                text="Confirm"
+                type="Accept"
+                press="confirmOrder"
+            />
+            <Button
+                text="Cancel"
+                type="Critical"
+                press="onCancelOrder"
+            />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

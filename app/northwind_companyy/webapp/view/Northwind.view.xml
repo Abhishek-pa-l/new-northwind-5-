@@ -1,0 +1,32 @@
+<mvc:View controllerName="com.sap.northwindcompanyy.controller.Northwind"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    displayBlock="true">
+    <Page id="page" title="Northwind">
+        <content>
+            <IconTabBar id="iconTabBar" class="sapUiResponsiveContentPadding" select="onIconTabBarSelect">
+                <items>
+                    <IconTabFilter id="homeTab" text="Home" key="homes"/>
+                    <IconTabFilter id="customersTab" text="Customers" key="Customers"/>
+                    <IconTabFilter id="employeesTab" text="Employees" key="Employees"/>
+                    <IconTabFilter id="orderTab" text="Orders" key="Orders"/>
+                     <IconTabFilter id="producttsb" text="Products" key="Products"/>
+                    <IconTabFilter id="shipperTab" text="Shippers" key="Shippers"/>
+                     <IconTabFilter id="regionTab" text="Regions" key="Regions"/>
+                     <IconTabFilter id="suplierTab" text="Supplier " key="suplier"/>
+                     <IconTabFilter id="invoice" text="Invoice " key="Invoice"/>
+                     <IconTabFilter id="order_detailTab" text="Order_Details" key="Order_Details"/>
+                     <IconTabFilter id="FilesTab" text="Attachments" key="Files"/>
+                    <IconTabFilter id="ProductsalesTab" text="Product sales Report" key="Product_sales"/>
+                    <IconTabFilter id="salesamountTab" text="Sales_Totals_by_Amounts" key="Sales_Totals"/>
+                    <IconTabFilter id="territoriesTab" text="Territories Report " key="territories"/>
+                    <IconTabFilter id="category_salestTab" text="Sales By Categories " key="category"/>
+                    
+                </items>
+            </IconTabBar> 
+            <Image src="https://www.northwind.in/images/northwind1.jpg"  width="100%" />
+         
+			 </content>
+    </Page>
+</mvc:View>

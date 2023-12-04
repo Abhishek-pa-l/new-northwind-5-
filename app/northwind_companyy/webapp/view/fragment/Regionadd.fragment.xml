@@ -1,0 +1,23 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog id="_IDGenDialog1">
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1">
+                <form:content>
+                    <Label id="_IDGenLabel1" text="Region ID" />
+                    <Input id="RegionID"/>
+                    <Label id="_IDGenLabel2" text="Region Description" />
+                    <Input id="RegionDescription" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar id="_IDGenToolbar1" >
+        <ToolbarSpacer id="_IDGenToolbarSpacer1" ></ToolbarSpacer>
+        <Button id="_IDGenBu98" text="Confirm" type="Accept" press="onPressConfirm"/>
+        <Button id="_IDGenBu34" text="Cancel" type="Critical" press="onPressCancel"/>
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>
