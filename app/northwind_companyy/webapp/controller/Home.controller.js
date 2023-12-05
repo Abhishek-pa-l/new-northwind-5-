@@ -7,6 +7,7 @@ sap.ui.define(
  
       return BaseController.extend("com.sap.northwindcompanyy.controller.Home", {
         onInit: function() {
+            
         },
             
         onIconTabBarSelect: function (oEvent) {
