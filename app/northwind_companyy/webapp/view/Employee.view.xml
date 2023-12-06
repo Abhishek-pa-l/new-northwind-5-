@@ -154,14 +154,12 @@
                     </Column>
                 </columns>
                 <items>
-                    <ColumnListItem>
+                   <ColumnListItem type="Active">
                         <cells>
-                            <ObjectIdentifier
-                                title="{Name}"
-                                text="{EmployeeID}"
-                            />
-                            <Text text="{LastName}" />
-                            <Text text="{FirstName}" />
+                         <Link text="{EmployeeID}" press="onPress"/>
+                         <Link text="{LastName}"  press="onPress"/>
+                         <Link text="{FirstName}"  press="onPress"/>
+                         
                             <Text text="{Title}" />
                             <Text text="{TitleOfCourtesy}" />
                             <Text text="{BirthDate}" />

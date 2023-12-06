@@ -355,7 +355,7 @@ convertCsvToJson: function (csvData) {
         var currentLine = lines[i].split(';');
 
    
-        if (currentLine[headers.indexOf('EmployeeID')].trim() !== '') {
+        if (currentLine[headers.indexOf('CustomerID')].trim() !== '') {
             for (var j = 0; j < headers.length; j++) {
                 obj[headers[j]] = currentLine[j];
             }
@@ -373,7 +373,7 @@ sendDataToBackend: function (jsonData) {
     var oModel = this.getView().getModel();
 
     for (var i = 0; i < jsonData.length; i++) {
-        oModel.create("/Employees", jsonData[i], {
+        oModel.create("/Customers", jsonData[i], {
             success: function () {
                MessageToast.show("Done");
             },

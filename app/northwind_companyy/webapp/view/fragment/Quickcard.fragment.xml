@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog contentWidth="400px" afterClose="close">
+        <QuickViewCard id="quickcard">
+            <QuickViewPage
+                header="EmployeeID"
+                 title="{= ${FirstName} + ' ' + ${LastName} }"
+                description="{Title}"
+            >
+                <avatar>
+                    <Avatar src="sap-icon://customer" />
+                </avatar>
+                <QuickViewGroup
+                    heading="contacts"
+                    elements=""
+                >
+                    <QuickViewGroupElement
+                        label="PhoneNumber"
+                        value="{HomePhone}"
+                    />
+                    <QuickViewGroupElement
+                        label="Address"
+                        value="{Address}"
+                    />
+                </QuickViewGroup>
+            </QuickViewPage>
+        </QuickViewCard>
+        <endButton >
+        <Button
+            text="cancel"
+            press="onCancelPress"
+        /></endButton>
+       
+    </Dialog>
+</core:FragmentDefinition>
+ 

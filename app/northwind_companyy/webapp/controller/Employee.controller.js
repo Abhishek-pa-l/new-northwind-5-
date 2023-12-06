@@ -431,8 +431,45 @@ sap.ui.define([
                 }
             });
         }
-    }
+    },  
+    onPress: function (oEvent) {
+        let selectedItem = oEvent.getSource().getBindingContext().getObject().EmployeeID;
+        let spath = `/Employees(${selectedItem})`;
+   
+        if (!this._quickcardDialog) {
+            Fragment.load({
+                id: this.getView().getId(),
+                name: "com.sap.northwindcompanyy.view.fragment.Quickcard",
+                controller: this
+            }).then(oDialog => {
+                this._quickcardDialog = oDialog;
+                this.getView().addDependent(oDialog);
+   
+                
+                oDialog.bindElement({
+                    path: spath,
+                
+                });
+   
+                oDialog.open();
+            });
+        } else {
+           
+            this._quickcardDialog.bindElement({
+                path: spath,
+          
+            });
+   
+            this._quickcardDialog.open();
+        }
+    },  
+    onCancelPress: function () {
+ 
+        this._quickcardDialog.close();
+    }, 
     
+    
+
     
   });
 });
