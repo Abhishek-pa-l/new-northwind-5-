@@ -14,23 +14,27 @@
                     <Avatar src="sap-icon://customer" />
                 </avatar>
                 <QuickViewGroup
-                    heading="contacts"
+                    heading="Contact Details"
                     elements=""
                 >
                     <QuickViewGroupElement
-                        label="PhoneNumber"
+                        label="Phone Number"
                         value="{HomePhone}"
                     />
                     <QuickViewGroupElement
                         label="Address"
                         value="{Address}"
                     />
+                      <QuickViewGroupElement
+                        label="Country"
+                        value="{Country}"
+                    />
                 </QuickViewGroup>
             </QuickViewPage>
         </QuickViewCard>
         <endButton >
         <Button
-            text="cancel"
+            text="Close"
             press="onCancelPress"
         /></endButton>
        

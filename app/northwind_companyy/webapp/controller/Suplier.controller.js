@@ -299,112 +299,75 @@ sap.ui.define([
             onFileUploadChange: function (oEvent) {
                 var oFileUploader = oEvent.getSource();
                 var oFile = oEvent.getParameter("files")[0];
- 
+            
                 if (!oFile) {
-                    // No file selected
+                 
                     console.error("No file selected");
                     return;
                 }
- 
+            
                 var reader = new FileReader();
- 
+            
                 reader.onload = function (e) {
                     var csvData = e.target.result;
- 
+            
                     if (!csvData) {
-                        // Empty file
+                    
                         console.error("Empty file");
                         return;
                     }
- 
+            
                     var jsonData = this.convertCsvToJson(csvData);
- 
+            
                     if (jsonData.length > 0) {
-                        // send to backend json data via odata call
+                       
                         this.sendDataToBackend(jsonData);
                     } else {
                         console.error("No valid data to send to the backend");
                     }
                 }.bind(this);
- 
+            
                 reader.onerror = function (e) {
                     console.error("Error reading file:", e);
                 };
- 
+            
                 reader.readAsText(oFile);
             },
- 
+            
             convertCsvToJson: function (csvData) {
                 var lines = csvData.split('\n');
                 var result = [];
-                var headers = lines[0].split(',');
+                var headers = lines[0].split(';');
+            
                 for (var i = 1; i < lines.length; i++) {
                     var obj = {};
-                    var currentLine = lines[i].split(',');
-           
+                    var currentLine = lines[i].split(';');
+            
+               
+                    if (currentLine[headers.indexOf('SupplierID')].trim() !== '') {
                         for (var j = 0; j < headers.length; j++) {
                             obj[headers[j]] = currentLine[j];
                         }
-           
+            
                         result.push(obj);
-                   
+                    }
                 }
-           
-                return JSON.stringify(result);
- 
- 
- 
+            
+                return result;
             },
- 
- 
+            
+            
             sendDataToBackend: function (jsonData) {
-                // Perform OData call to send jsonData to the backend
-                // Example: Assume there is an OData model named 'oModel'
+                
                 var oModel = this.getView().getModel();
-                let oFileData = JSON.parse(jsonData.replace(/\\r/g, ''));
-                console.log(oFileData);
-                oFileData = oFileData.filter(function(item) {
-                  return item.SupplierID !== "";
-                });
-                for (var i = 0; i < oFileData.length; i++) {
-                  let myData = {
- 
-                    SupplierID: oFileData[i].SupplierID,
-                    CompanyName: oFileData[i].CompanyName,
-                    ContactName: oFileData[i].ContactName,
-                    ContactTitle: oFileData[i].ContactTitle,
-                    Address: oFileData[i].Address,
-                    City: oFileData[i].City,
-                    Region: oFileData[i].Region,
-                    PostalCode:oFileData[i].PostalCode,
-                    Country: oFileData[i].Country,
-                    Phone: oFileData[i].Phone,
-                    Fax: oFileData[i].Fax,
-                    HomePage: oFileData[i].HomePage
-         
-                    // OrderID: parseInt(oFileData[i].OrderID),
-                    // CustomerID: oFileData[i].CustomerID,
-                    // EmployeeID: parseInt(oFileData[i].EmployeeID),
-                    // OrderDate: oFileData[i].OrderDate,
-                    // RequiredDate: oFileData[i].RequiredDate,
-                    // ShippedDate: oFileData[i].ShippedDate,
-                    // ShipVia: parseInt(oFileData[i].ShipVia),
-                    // Freight: oFileData[i].Freight,
-                    // ShipName: oFileData[i].ShipName,
-                    // ShipAddress: oFileData[i].ShipAddress,
-                    // ShipCity: oFileData[i].ShipCity,
-                    // ShipRegion: oFileData[i].ShipRegion,
-                    // ShipPostalCode: oFileData[i].ShipPostalCode,
-                    // ShipCountry: oFileData[i].ShipCountry,
-                  };
-                    oModel.create("/Suppliers", myData, {
-                        success: function (oRes) {
-                            // Handle success
-                            console.log(oRes);
-         
+            
+                for (var i = 0; i < jsonData.length; i++) {
+                    oModel.create("/Suppliers", jsonData[i], {
+                        success: function () {
+                           MessageToast.show("Done");
                         },
-                        error: function (oErr) {
-                          console.log(oErr);
+                        error: function () {
+                 
                         }
                     });
                 }

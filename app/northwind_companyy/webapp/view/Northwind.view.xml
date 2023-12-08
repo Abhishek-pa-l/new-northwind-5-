@@ -15,7 +15,7 @@
                     <IconTabFilter id="shipperTab" text="Shippers" key="Shippers"/>
                      <IconTabFilter id="regionTab" text="Regions" key="Regions"/>
                      <IconTabFilter id="suplierTab" text="Supplier " key="suplier"/>
-                     <IconTabFilter id="invoice" text="Invoice " key="Invoice"/>
+                   
                      <IconTabFilter id="order_detailTab" text="Order_Details" key="Order_Details"/>
                      <IconTabFilter id="FilesTab" text="Attachments" key="Files"/>
                     <IconTabFilter id="ProductsalesTab" text="Product sales Report" key="Product_sales"/>
