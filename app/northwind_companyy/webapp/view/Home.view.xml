@@ -84,8 +84,9 @@
                                 <microchart:bars>
                                     <microchart:StackedBarMicroChartBar
                                         value="{CategoryID}"
-                                        valueColor="Neutral"
+                                        valueColor="Good"
                                     />
+                                  
                                 </microchart:bars>
                             </microchart:StackedBarMicroChart>
                     </TileContent>
