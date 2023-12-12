@@ -3,13 +3,14 @@ sap.ui.define(
       "sap/ui/core/mvc/Controller",
       "sap/ui/core/Fragment",
       "sap/m/MessageToast",
+      "sap/m/MessageBox",
       "sap/ui/export/Spreadsheet",
       "sap/ui/model/Filter",
       "sap/ui/model/FilterOperator"
   
   
     ],
-    function (Controller, Fragment, MessageToast, Spreadsheet, Filter, FilterOperator) {
+    function (Controller, Fragment, MessageToast,MessageBox, Spreadsheet, Filter, FilterOperator) {
       "use strict";
   
       return Controller.extend("com.sap.northwindcompanyy.controller.Order", {
@@ -100,7 +101,7 @@ sap.ui.define(
               console.log("done")
             },
             error: function (err) {
-              console.log(err)
+              MessageBox.error("Order Id and Customer ID are Mandatory")
             }
 
           })
@@ -453,7 +454,7 @@ sap.ui.define(
                      MessageToast.show("Done");
                   },
                   error: function () {
-           
+                    MessageBox.error("Customer ID is Missing in CSV File")
                   }
               });
           }

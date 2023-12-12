@@ -113,7 +113,7 @@ entity Invoice {
   ShipRegion     : String;
   ShipPostalCode : String;
   ShipCountry    : String;
-  CustomerID     : String;
+ key CustomerID     : String;
   CustomerName   : String;
   Address        : String;
   City           : String;
@@ -122,9 +122,9 @@ entity Invoice {
   Country        : String;
   Salesperson    : String;
   OrderID        : Integer;
-  OrderDate      : Date;
-  RequiredDate   : Date;
-  ShippedDate    : Date;
+  OrderDate      : String;
+  RequiredDate   : String;
+  ShippedDate    : String;
   ShipperName    : String;
   ProductID      : Integer;
   ProductName    : String;
@@ -158,7 +158,7 @@ entity Files : cuid, managed {
  entity Product_Sales_for_1997 {
   CategoryName : String;
   ProductName : String;
-  Key ProductSales : Decimal;
+  Key ProductSales : Integer;
 }
 entity Territorie{
   key TerritoryID          : String;

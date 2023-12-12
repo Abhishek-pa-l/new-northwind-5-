@@ -1,0 +1,80 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+>
+    <Dialog contentWidth="800px">
+        <content>
+            <form:SimpleForm>
+                <form:content>
+                    <Label text="ShipName" />
+                    <Input id="ShipName" />
+                    <Label text="ShipAddress" />
+                    <Input id="ShipAddress" />
+                    <Label text="ShipCity" />
+                    <Input id="ShipCity" />
+                    <Label text="ShipRegion" />
+                    <Input id="ShipRegion" />
+                    <Label text="ShipPostalCode" />
+                    <Input id="ShipPostalCode" />
+                    <Label text="ShipCountry" />
+                    <Input id="ShipCountry" />
+                    <Label text="CustomerID" />
+                    <Input id="CustomerID" />
+                    <Label text="CustomerName" />
+                    <Input id="CustomerName" />
+                    <Label text="Address" />
+                    <Input id="Address" />
+                    <Label text="City" />
+                    <Input id="City" />
+                    <Label text="Region" />
+                    <Input id="Region" />
+                    <Label text="PostalCode" />
+                    <Input id="PostalCode" />
+                    <Label text="Country" />
+                    <Input id="Country" />
+                    <Label text="Salesperson" />
+                    <Input id="Salesperson" />
+                    <Label text="OrderID" />
+                    <Input id="OrderID" />
+                    <Label text="OrderDate" />
+                    <DatePicker id="OrderDate"></DatePicker>
+                    <Label text="RequiredDate" />
+                    <DatePicker id="RequiredDate"></DatePicker>
+                    <Label text="ShippedDate" />
+                    <DatePicker id="ShippedDate"></DatePicker>
+                    <Label text="ShipperName" />
+                    <Input id="ShipperName" />
+                    <Label text="ProductID" />
+                    <Input id="ProductID" />
+                    <Label text="ProductName" />
+                    <Input id="ProductName" />
+                    <Label text="UnitPrice" />
+                    <Input id="UnitPrice" />
+                    <Label text="Quantity" />
+                    <Input id="Quantity" />
+                    <Label text="Discount" />
+                    <Input id="Discount" />
+                    <Label text="ExtendedPrice" />
+                    <Input id="ExtendedPrice" />
+                    <Label text="Freight" />
+                    <Input id="Freight" />
+                </form:content>
+            </form:SimpleForm>
+        </content>
+        <Toolbar>
+            <ToolbarSpacer />
+            <Button
+                text="Confirm"
+                type="Accept"
+                press="confirmOrder"
+            />
+            <Button
+                text="Cancel"
+                type="Critical"
+                press="onCancelOrder"
+            />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>
+ 

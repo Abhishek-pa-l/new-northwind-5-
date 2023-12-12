@@ -2,6 +2,7 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
     "sap/m/MessageToast",
+    "sap/m/MessageBox",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/export/Spreadsheet",
@@ -11,7 +12,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Fragment, MessageToast, Filter, FilterOperator, Spreadsheet) {
+    function (Controller, Fragment, MessageToast, MessageBox, Filter, FilterOperator, Spreadsheet) {
         "use strict";
  
         return Controller.extend("com.sap.northwindcompanyy.controller.Suplier", {
@@ -78,7 +79,7 @@ sap.ui.define([
                         this._oCreateProductDialog.close()
                     },
                     error: function (err) {
-                        console.log(err)
+                       MessageBox.error("ID and CompanyName are Mandatory")
                     }
                 })
  
@@ -367,7 +368,7 @@ sap.ui.define([
                            MessageToast.show("Done");
                         },
                         error: function () {
-                 
+                         MessageBox.error("CompanyName is Missing in CSV File")
                         }
                     });
                 }

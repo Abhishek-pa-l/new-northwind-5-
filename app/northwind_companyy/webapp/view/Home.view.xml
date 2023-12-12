@@ -37,10 +37,7 @@
                     subheader="RegionID"
                     press="onTerritoriesTilePress"
                 >
-                    <TileContent
-                        id="_IDGenTileContent11"
-                       
-                    >
+                    <TileContent id="_IDGenTileContent11">
                         <content>
                             <microchart:ColumnMicroChart
                                 id="oVizFrame"
@@ -57,38 +54,33 @@
                                         value="{RegionID}"
                                         color="{Color}"
                                     />
-                                   
                                 </microchart:columns>
                             </microchart:ColumnMicroChart>
                         </content>
                     </TileContent>
                 </GenericTile>
-                
-                 <GenericTile
+
+                <GenericTile
                     id="_IDGenGenericTile14"
                     class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
                     header="Sales By Category"
                     frameType="TwoByOne"
                     subheader=""
-                     press="onSalesByCategoriesTilePress"
+                    press="onSalesByCategoriesTilePress"
                 >
-                    <TileContent
-                        id="_IDGenTileContent12"
-                    >
-                    <microchart:StackedBarMicroChart
-                                size="M"
-                               
-                                class="sapUiSmallMargin customMicroChart"
-                                bars="{path: '/Sales_by_Categories'}"
-                            >
-                                <microchart:bars>
-                                    <microchart:StackedBarMicroChartBar
-                                        value="{CategoryID}"
-                                        valueColor="Good"
-                                    />
-                                  
-                                </microchart:bars>
-                            </microchart:StackedBarMicroChart>
+                    <TileContent id="_IDGenTileContent12">
+                        <microchart:StackedBarMicroChart
+                            size="M"
+                            class="sapUiSmallMargin customMicroChart"
+                            bars="{path: '/Sales_by_Categories'}"
+                        >
+                            <microchart:bars>
+                                <microchart:StackedBarMicroChartBar
+                                    value="{CategoryID}"
+                                    valueColor="Default"
+                                />
+                            </microchart:bars>
+                        </microchart:StackedBarMicroChart>
                     </TileContent>
                 </GenericTile>
                 <GenericTile
@@ -98,54 +90,26 @@
                     frameType="TwoByOne"
                     subheader=""
                     press="onproduct_salesPress"
+                    
                 >
-                    <TileContent
-                        id="_IDGenTileContent2"
-                    >
-                        <content>
-                            
-                            <viz:VizFrame
-                                id="_IDGenBarChart"
-                                vizType="bar"
-                                width="100%"
-                                height="100%"
-                            >
-                                <viz:dataset>
-                                    <viz.data:FlattenedDataset
-                                        data="{path: '/Product_Sales_for_1997'}"
-                                    >
-                                        <viz.data:dimensions>
-                                            <viz.data:DimensionDefinition
-                                                name="Category"
-                                                value="{ProductName}"
-                                            />
-                                        </viz.data:dimensions>
-                                        <viz.data:measures>
-                                            <viz.data:MeasureDefinition
-                                                group="1"
-                                                name="SalesValue"
-                                                value="{ProductSales}"
-                                            />
-                                        </viz.data:measures>
-                                    </viz.data:FlattenedDataset>
-                                </viz:dataset>
-                                <viz:feeds>
-                                    <viz.feeds:FeedItem
-                                        uid="categoryAxis"
-                                        type="Dimension"
-                                        values="Category"
-                                    />
-                                    <viz.feeds:FeedItem
-                                        uid="valueAxis"
-                                        type="Measure"
-                                        values="SalesValue"
-                                    />
-                                </viz:feeds>
-                            </viz:VizFrame>
-                        </content>
+                    <TileContent id="_IDGenTileContent2">
+                         <microchart:InteractiveBarChart
+            labelWidth="25%"
+            displayedBars="3"
+            selectionChanged="selectionChanged"
+            bars="{/Product_Sales_for_1997}"
+        >
+            <microchart:bars>
+                <microchart:InteractiveBarChartBar
+                    label="{ProductName}"
+                    value="{ProductSales}"
+                />
+            </microchart:bars>
+        </microchart:InteractiveBarChart>
+                        
                     </TileContent>
                 </GenericTile>
-            
+
                 <GenericTile
                     id="_IDGenGenericTile3"
                     class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
@@ -154,49 +118,22 @@
                     subheader=""
                     press="onsales_amountPress"
                 >
-                    <TileContent
-                        id="_IDGenTileContent3"
-                    >
-                        <content>
-                            <viz:VizFrame
-                                id="_IDGenLineChart"
-                                vizType="line"
-                                width="100%"
-                                height="100%"
-                            >
-                                <viz:dataset>
-                                    <viz.data:FlattenedDataset
-                                        data="{path: '/Sales_Totals_by_Amounts'}"
-                                    >
-                                        <viz.data:dimensions>
-                                            <viz.data:DimensionDefinition
-                                                name="CompanyName"
-                                                value="{CompanyName}"
-                                            />
-                                        </viz.data:dimensions>
-                                        <viz.data:measures>
-                                            <viz.data:MeasureDefinition
-                                                group="1"
-                                                name="SaleAmount"
-                                                value="{SaleAmount}"
-                                            />
-                                        </viz.data:measures>
-                                    </viz.data:FlattenedDataset>
-                                </viz:dataset>
-                                <viz:feeds>
-                                    <viz.feeds:FeedItem
-                                        uid="categoryAxis"
-                                        type="Dimension"
-                                        values="CompanyName"
-                                    />
-                                    <viz.feeds:FeedItem
-                                        uid="valueAxis"
-                                        type="Measure"
-                                        values="SaleAmount"
-                                    />
-                                </viz:feeds>
-                            </viz:VizFrame>
-                        </content>
+                    <TileContent id="_IDGenTileContent3">
+                         <microchart:InteractiveBarChart
+            labelWidth="25%"
+            displayedBars="3"
+            selectionChanged="selectionChanged"
+            bars="{/Sales_Totals_by_Amounts}"
+        >
+            <microchart:bars>
+                <microchart:InteractiveBarChartBar
+                    label="{CompanyName}"
+                    value="{SaleAmount}"
+                    color="Critical"
+                />
+            </microchart:bars>
+        </microchart:InteractiveBarChart>
+
                     </TileContent>
                 </GenericTile>
             </HBox>

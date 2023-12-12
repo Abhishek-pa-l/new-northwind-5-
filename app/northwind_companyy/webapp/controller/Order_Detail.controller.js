@@ -5,12 +5,13 @@ sap.ui.define([
     "sap/m/Input",
     "sap/m/Label",
     "sap/m/MessageToast",
+    "sap/m/MessageBox",
     "sap/ui/core/Fragment",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
     "sap/ui/export/Spreadsheet",
     "sap/m/upload/Uploader"
-], function (BaseController, Dialog, Button, Input, Label, MessageToast, Fragment, Filter, FilterOperator, Spreadsheet, Uploader) {
+], function (BaseController, Dialog, Button, Input, Label, MessageToast, MessageBox, Fragment, Filter, FilterOperator, Spreadsheet, Uploader) {
     "use strict";
  
     return BaseController.extend("com.sap.northwindcompanyy.controller.Order_Detail", {
@@ -188,13 +189,12 @@ sap.ui.define([
                     this.getView().byId("Quantity").setValue("");
                     this.getView().byId("Discount").setValue("");
  
-                    // Close the dialog
                     this._oCreateProductDialog.close();
                 }.bind(this),
                 error: function (err) {
                     console.error(err);
-                    // You can show an error message if needed
-                    MessageToast.show("Error occurred while saving data");
+                   
+                    MessageBox.error("OrderId and ProductID is Mandatory Fields");
                 }
             });
         },
@@ -391,10 +391,10 @@ sap.ui.define([
             for (var i = 0; i < jsonData.length; i++) {
                 oModel.create("/Order_Details", jsonData[i], {
                     success: function () {
-                        // Handle success
+                        MessageToast.show("Done");
                     },
                     error: function () {
-             
+                        MessageBox.error("OrderID is Mandatory in CSV File");
                     }
                 });
             }

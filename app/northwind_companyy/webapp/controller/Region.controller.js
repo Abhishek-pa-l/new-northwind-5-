@@ -1,12 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
+    "sap/m/MessageBox",
     "sap/ui/core/Fragment",
     "sap/ui/model/Filter",
     "sap/ui/export/Spreadsheet",
     "sap/ui/model/FilterOperator",
 ],
-    function (Controller, MessageToast, Fragment, Filter, FilterOperator, Spreadsheet) {
+    function (Controller, MessageToast,MessageBox, Fragment, Filter, FilterOperator, Spreadsheet) {
         "use strict";
  
         return Controller.extend("com.sap.northwindcompanyy.controller.Region", {
@@ -159,7 +160,7 @@ sap.ui.define([
                             // Handle success
                         },
                         error: function () {
-                 
+                          MessageBox.error("Description is Missing In CSV File")
                         }
                     });
                 }
@@ -268,7 +269,7 @@ sap.ui.define([
                     error: function (err) {
                         console.error(err);
                         // You can show an error message if needed
-                        MessageToast.show("Error occurred while saving data");
+                        MessageBox.error("Id and Description are Mandatory");
                     }
                 });
             },

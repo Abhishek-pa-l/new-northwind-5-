@@ -38,7 +38,7 @@ sap.ui.define([
                     oRouter.navTo("Category", { key: oSelectedKey });
                 }   else if (oSelectedKey === "suplier") {
                     oRouter.navTo("Suplier", { key: oSelectedKey });
-                }   else if (oSelectedKey === "invoice") {
+                }   else if (oSelectedKey === "Invoice") {
                     oRouter.navTo("Invoice", { key: oSelectedKey });
             } else if (oSelectedKey === "Regions") {
                 oRouter.navTo("Region", { key: oSelectedKey });

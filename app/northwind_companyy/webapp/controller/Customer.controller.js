@@ -1,11 +1,12 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
   "sap/m/MessageToast",
+  "sap/m/MessageBox",
   "sap/ui/core/Fragment",
   "sap/ui/model/Filter",
   "sap/ui/model/FilterOperator",
   "sap/ui/export/Spreadsheet" 
-], function (BaseController, MessageToast, Fragment,Filter,FilterOperator ,Spreadsheet) {
+], function (BaseController, MessageToast,MessageBox, Fragment,Filter,FilterOperator ,Spreadsheet) {
   "use strict";
 
   return BaseController.extend("com.sap.northwindcompanyy.controller.Customer", {
@@ -88,7 +89,7 @@ sap.ui.define([
         }.bind(this),
         error: function (err) {
           console.error("Error while saving data:", err);
-          MessageToast.show("Error occurred while saving data");
+          MessageBox.error("Company Name and customer Id is mandatory");
         }
       });
     },
@@ -378,7 +379,7 @@ sendDataToBackend: function (jsonData) {
                MessageToast.show("Done");
             },
             error: function () {
-     
+              MessageBox.error("Company Name and customer Id is mandatory");
             }
         });
     }

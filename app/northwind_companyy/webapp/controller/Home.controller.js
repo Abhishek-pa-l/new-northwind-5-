@@ -9,7 +9,9 @@ sap.ui.define(
         onInit: function() {
             
         },
-            
+
+        
+ 
         onIconTabBarSelect: function (oEvent) {
           var oRouter = this.getOwnerComponent().getRouter();
           var oSelectedKey = oEvent.getParameter("key");
