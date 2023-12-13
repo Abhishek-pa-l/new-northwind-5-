@@ -119,20 +119,19 @@
                     press="onsales_amountPress"
                 >
                     <TileContent id="_IDGenTileContent3">
-                         <microchart:InteractiveBarChart
-            labelWidth="25%"
-            displayedBars="3"
-            selectionChanged="selectionChanged"
-            bars="{/Sales_Totals_by_Amounts}"
-        >
-            <microchart:bars>
-                <microchart:InteractiveBarChartBar
-                    label="{CompanyName}"
-                    value="{SaleAmount}"
-                    color="Critical"
-                />
-            </microchart:bars>
-        </microchart:InteractiveBarChart>
+                      <microchart:LineMicroChart
+    id="lineMicroChart"
+   >
+    <microchart:lines>
+        <microchart:LineMicroChartLine
+            points="{/Sales_Totals_by_Amounts}">
+            <microchart:LineMicroChartPoint
+                x="{OrderID}"
+                y="{SaleAmount}" />
+        </microchart:LineMicroChartLine>
+    </microchart:lines>
+</microchart:LineMicroChart>
+
 
                     </TileContent>
                 </GenericTile>
