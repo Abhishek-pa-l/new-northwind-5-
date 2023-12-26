@@ -208,6 +208,13 @@
                     "target": [
                         "TargetInvoice"
                     ]
+                },
+                {
+                    "name": "Form",
+                    "pattern": "page17",
+                    "target": [
+                        "TargetForm"
+                    ]
                 }
 
 
@@ -326,6 +333,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Invoice",
                     "viewName":"Invoice"
+                },
+                "TargetForm": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Form",
+                    "viewName":"Form"
                 }
             }
         },

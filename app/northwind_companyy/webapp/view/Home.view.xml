@@ -42,17 +42,19 @@
                             <microchart:ColumnMicroChart
                                 id="oVizFrame"
                                 columns="{path: '/Territories'}"
+                                 width="100%"
+                                 height="80px"
                             >
                                 <microchart:columns>
                                     <microchart:ColumnMicroChartData
                                         id="_IDGenColumnMicroChartData1"
                                         value="{TerritoryID}"
-                                        color="{Good}"
+                                      
                                     />
                                     <microchart:ColumnMicroChartData
                                         id="_IDGenColumnMicroChartData2"
                                         value="{RegionID}"
-                                        color="{Color}"
+                                        color="Critical"
                                     />
                                 </microchart:columns>
                             </microchart:ColumnMicroChart>
@@ -73,6 +75,8 @@
                             size="M"
                             class="sapUiSmallMargin customMicroChart"
                             bars="{path: '/Sales_by_Categories'}"
+                             width="90%"
+                            height="100px"
                         >
                             <microchart:bars>
                                 <microchart:StackedBarMicroChartBar
@@ -121,6 +125,8 @@
                     <TileContent id="_IDGenTileContent3">
                       <microchart:LineMicroChart
     id="lineMicroChart"
+    width="100%"
+    height="100px"
    >
     <microchart:lines>
         <microchart:LineMicroChartLine

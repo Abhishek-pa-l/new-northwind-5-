@@ -45,7 +45,9 @@ sap.ui.define([
               }   else if (oSelectedKey === "homes") {
                     oRouter.navTo("Home", { key: oSelectedKey });
             }
-            
+            else if (oSelectedKey === "Form") {
+                oRouter.navTo("Form", { key: oSelectedKey });
+        }
             
         }  
     });

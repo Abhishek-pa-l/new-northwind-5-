@@ -15,4 +15,5 @@ service CatalogService {
    entity Sales_by_Categories as projection on my.Sales_by_Categorie;
    entity Suppliers         as projection on my.Supplier;
    entity Invoices         as projection on my.Invoice;
+   action Submit(payload: String) returns String;
 }

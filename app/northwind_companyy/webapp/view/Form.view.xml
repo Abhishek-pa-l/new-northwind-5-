@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="com.sap.northwindcompanyy.controller.Form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+>
+    <Page
+        id="Formid"
+        title="Form"
+    >
+        <content>
+         <form:SimpleForm id="_IDGenSimpleForm1">
+           
+                <Label id="_IDGenLabel1" text="Supplier Name" />
+                <Input id="supplierNameInput"  />
+ 
+                <Label id="_IDGenLabel2" text="Product Name" />
+                <Input id="productNameInput"  />
+ 
+                <Label id="_IDGenLabel3" text="Order Amount" />
+                <Input id="orderAmountInput" type="Number"  />
+ 
+                <Label id="_IDGenLabel4" text="Product Need By Date" />
+                <DatePicker id="productNeedByDateInput"  />
+ 
+                <Label id="_IDGenLabel5" text="Created By" />
+                <Input id="createdByInput"  />
+ 
+                <Label id="_IDGenLabel6" text="Created Date" />
+                <DatePicker  id="createdDateInput"  />
+ 
+               
+           
+            </form:SimpleForm>
+            <Button text="Submit" press="onSubmit" />
+        </content>
+    </Page>
+</mvc:View>
+ 
+

@@ -87,6 +87,11 @@
                         text="Sales By Categories "
                         key="category"
                     />
+                     <IconTabFilter
+                        id="FormTab"
+                        text="Form "
+                        key="Form"
+                    />
                 </items>
             </IconTabBar>
             <Image
