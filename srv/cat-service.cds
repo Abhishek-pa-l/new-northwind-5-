@@ -16,4 +16,5 @@ service CatalogService {
    entity Suppliers         as projection on my.Supplier;
    entity Invoices         as projection on my.Invoice;
    action Submit(payload: String) returns String;
+   action Trigger(payload: String) returns String;
 }

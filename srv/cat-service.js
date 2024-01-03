@@ -1,4 +1,10 @@
 const axios = require("axios");
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+const request = require('request');
  
 module.exports = async srv => {
  
@@ -146,6 +152,68 @@ module.exports = async srv => {
         } catch (error) {
             throw error;
         }
+        
     };
+    srv.on('Trigger', async function (req, res) {
+       
+        try {
+            let item = JSON.parse(req.data.payload);
+            var options = {
+                url: 'https://clm-sl-ans-live-ans-service-api.cfapps.us10.hana.ondemand.com/cf/producer/v1/resource-events',
+                method: 'POST',
+                auth: {
+                    user: "843ef0e3-7164-4b70-b051-c0f17c7ae0e1",
+                    password: "dn2MY6rX8kgvDCSpl7zxo7ADBz4MEWNm"
+                },
+                json: {
+                    "eventType": "mycustomevent",
+                    "resource": {
+                        "resourceName": "Your Node.js App.",
+                        "resourceType": "app",
+                        "tags": {
+                            "env": "develop environment"
+                        }
+                    },
+                    "severity": "FATAL",
+                    "category": "ALERT",
+                    "subject": "Something is wrong.",
+                    "body": `${item.ProductName} is low in quantity please Order`,
+                    "tags": {
+                        "ans:correlationId": "30118",
+                        "ans:status": "CREATE_OR_UPDATE",
+                        "customTag": "42"
+                    }
+                }
+            };
+   
+            // Use async/await with the request-promise library for asynchronous request
+            const response = await request(options);
+            console.log(response.body);
+            // res.status(200).send(response.body);
+        } catch (error) {
+            console.log('got error');
+            console.error(error);
+   
+            // Handle the error or return an appropriate response
+            res.status(500).json({ code: 500, message: 'Internal Server Error' });
+        }
+    });
+   
+ 
+    // async function _fetchJwtToken(oauthUrl, oauthClient, oauthSecret) {
+    //     try {
+    //         const tokenUrl = oauthUrl + "/oauth/token?grant_type=client_credentials&response_type=token";
+    //         const config = {
+    //             headers: {
+    //                 Authorization: "Basic " + Buffer.from(oauthClient + ":" + oauthSecret).toString("base64"),
+    //             },
+    //         };
+    //         const response = await axios.get(tokenUrl, config);
+    //         return response.data.access_token;
+    //     } catch (error) {
+    //         throw error;
+    //     }
+    // }
 };
+
  

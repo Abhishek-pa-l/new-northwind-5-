@@ -38,7 +38,47 @@ sap.ui.define(
           }
           
       }  ,
-  
+      formatUnitsInStock: function (value) {
+        return value < 10 ? "ShowButton" : value;
+      },
+      formatUnitsInStock: function (iUnitsInStock) {
+        if (parseInt(iUnitsInStock) < 10) {
+          return iUnitsInStock + " (Low Stock)";
+        } else {
+          return iUnitsInStock.toString();
+        }
+      },
+ 
+      onUnitsInStockClick: function (oEvent) {
+        debugger;
+        let oModel = this.getOwnerComponent().getModel();
+        var sUnitsInStock = oEvent.getSource().getText();
+        var item = oEvent.getSource().getBindingContext().getObject().ProductName;
+        let data = {
+          "ProductName" : item
+        }
+        if (sUnitsInStock.includes("(Low Stock)")) {
+          sap.m.MessageBox.alert("Low Stock: You have low stock! Order Now!.", {
+            onClose: function (oAction) {
+              if (oAction === "OK") {
+                let payload = {
+                  payload: JSON.stringify(data)
+              };
+             
+                oModel.create("/Trigger", payload, {
+                  success: function (res) {
+                    // sap.m.MessageBox.success("Success");
+                    // console.log("Done", res);
+                  },
+                  error: function (err) {
+ 
+                  }
+                });
+              }
+            }
+          });
+        }
+      },
         onAddPress: function () {
           debugger;
   

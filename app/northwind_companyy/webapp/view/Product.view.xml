@@ -140,9 +140,10 @@
                                 id="_IDGenText06"
                                 text="{UnitPrice}"
                             />
-                            <Text
+                           <Link
                                 id="_IDGenText07"
-                                text="{UnitsInStock}"
+                                text="{path: 'UnitsInStock', formatter: '.formatUnitsInStock'}"
+                                press="onUnitsInStockClick"
                             />
                             <Text
                                 id="_IDGenText08"
