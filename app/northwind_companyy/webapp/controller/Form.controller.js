@@ -19,7 +19,7 @@ sap.ui.define([
   const oCreatedDate = this.getView().byId("createdDateInput").getDateValue();
 
   let data = {
-      "supplierName": oSupplier,
+      "supplierName": parseInt(oSupplier),
       "productName": oProduct, 
       "orderAmount" :parseInt(oOrderAmount),
       "productNeedByDate" : oProductNeedByDate,

@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+    xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+ 
+    <Dialog contentWidth="800px">
+        <content>
+            <form:SimpleForm id="_IDGenSimpleForm1">
+           
+                <Label id="_IDGenLabel1" text="Supplier ID" />
+                <Input id="supplierNameInput"  value="{SupplierID}" />
+ 
+                <Label id="_IDGenLabel2" text="Product Name" />
+                <Input id="productNameInput" value="{ProductName}" />
+ 
+                <Label id="_IDGenLabel3" text="Order Amount" />
+                <Input id="orderAmountInput" type="Number" value="{UnitPrice}" />
+ 
+                <Label id="_IDGenLabel4" text="Product Need By Date" />
+                <DatePicker id="productNeedByDateInput"  />
+ 
+                <Label id="_IDGenLabel5" text="Created By" />
+                <Input id="createdByInput"  />
+ 
+                <Label id="_IDGenLabel6" text="Created Date" />
+                <DatePicker  id="createdDateInput"  />
+ 
+               
+           
+            </form:SimpleForm>
+           
+        </content>
+        <Toolbar>
+            <ToolbarSpacer></ToolbarSpacer>
+            <Button text="Submit" type="Accept" press="onSubmitOrder" />
+            <Button text="Cancel" type="Critical" press="onCancelOrder" />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

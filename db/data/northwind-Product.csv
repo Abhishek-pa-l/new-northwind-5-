@@ -1,5 +1,8 @@
 ProductID;ProductName;SupplierID;CategoryID;QuantityPerUnit;UnitPrice;UnitsInStock;UnitsOnOrder;ReorderLevel;Discontinued
 1;Chai;1;1;10 boxes x 20 bags;18.0000;39;0;10;false
-2;Chang;1;1;24 - 12 oz bottles;19.0000;17;40;25;false
-3;Aniseed Syrup;1;2;12 - 550 ml bottles;10.0000;13;70;25;false
-8;Chips;4;3;600 ml bottles;19.000;5;80;26;false
+2;Coffee;4;3;700 ml bottles;19.000;6;81;27;false
+3;Chang;1;1;24 - 12 oz bottles;19.0000;17;40;25;false
+4;Aniseed Syrup;1;2;12 - 550 ml bottles;10.0000;13;70;25;false
+5;Tea;4;3;600 ml bottles;19.000;5;80;26;false
+6;Juice;4;3;800 ml bottles;20.000;2;82;29;false
+7;Energy Drink;4;3;900 ml bottles;20.000;4;83;28;false
